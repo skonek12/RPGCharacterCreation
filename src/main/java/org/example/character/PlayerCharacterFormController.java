@@ -1,0 +1,112 @@
+package org.example.character;
+
+import org.example.charAttributes.CharAttributesRepository;
+import org.example.charClass.CharClass;
+import org.example.charClass.CharClassRepository;
+import org.example.charSkills.CharSkillsRepository;
+import org.example.perks.Perks;
+import org.example.perks.PerksRepository;
+import org.example.race.RaceRepository;
+import org.example.race.Race;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+
+import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
+
+@Controller
+public class PlayerCharacterFormController {
+    private final PlayerCharacterRepository playerCharacterRepository;
+    private final CharAttributesRepository charAttributesRepository;
+    private final CharSkillsRepository charSkillsRepository;
+    private final PerksRepository perksRepository;
+    private final RaceRepository raceRepository;
+    private final CharClassRepository charClassRepository;
+
+    public PlayerCharacterFormController(PlayerCharacterRepository playerCharacterRepository, CharAttributesRepository charAttributesRepository, CharSkillsRepository charSkillsRepository, PerksRepository perksRepository, RaceRepository raceRepository, CharClassRepository charClassRepository) {
+        this.playerCharacterRepository = playerCharacterRepository;
+        this.charAttributesRepository = charAttributesRepository;
+        this.charSkillsRepository = charSkillsRepository;
+        this.perksRepository = perksRepository;
+        this.raceRepository = raceRepository;
+        this.charClassRepository = charClassRepository;
+    }
+
+    @GetMapping("/character/new")
+    public String newBook(Model model) {
+        PlayerCharacter playerCharacter = new PlayerCharacter();
+        model.addAttribute("playerCharacter", playerCharacter);
+        return "/character/new";
+    }
+
+    @PostMapping("/character/new")
+    public String saveBook(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "/character/new";
+        }
+        playerCharacterRepository.save(playerCharacter);
+        return "redirect:/character/list";
+    }
+
+    @GetMapping("/character/list")
+    public String listBooks(Model model) {
+        List<PlayerCharacter> playerCharacters = playerCharacterRepository.findAll();
+        model.addAttribute("playerCharacters", playerCharacters);
+        return "/character/list";
+    }
+
+    @GetMapping("/character/edit/{id}")
+    public String editBook(Model model, @PathVariable long id) {
+        Optional<PlayerCharacter> playerCharacter = playerCharacterRepository.findById(id);
+        if (playerCharacter.isPresent()) {
+            model.addAttribute("playerCharacter", playerCharacter);
+            return "/character/edit";
+        } else {
+            return "redirect:/character/list";
+        }
+    }
+
+    @PostMapping("/character/edit")
+    public String updateBook(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "/character/edit";
+        }
+        playerCharacterRepository.save(playerCharacter);
+        return "redirect:/character/list";
+    }
+
+    @GetMapping("/character/delete/{id}")
+    public String deleteBookForm(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        return "/character/delete";
+    }
+
+    @PostMapping("/character/delete/{id}")
+    public String deleteBook(@PathVariable long id) {
+        playerCharacterRepository.deleteById(id);
+        return "redirect:/character/list";
+    }
+
+    @ModelAttribute("races")
+    public List<Race> races() {
+        return raceRepository.findAll();
+    }
+
+    @ModelAttribute("classes")
+    public List<CharClass> classes() {
+        return charClassRepository.findAll();
+    }
+
+    @ModelAttribute("perks")
+    public List<Perks> perks() {
+        return perksRepository.findAll();
+    }
+}
