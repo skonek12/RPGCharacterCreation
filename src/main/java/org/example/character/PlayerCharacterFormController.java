@@ -1,5 +1,6 @@
 package org.example.character;
 
+import org.example.charAttributes.CharAttributes;
 import org.example.charAttributes.CharAttributesRepository;
 import org.example.charClass.CharClass;
 import org.example.charClass.CharClassRepository;
@@ -43,6 +44,8 @@ public class PlayerCharacterFormController {
     @GetMapping("/character/new")
     public String newBook(Model model) {
         PlayerCharacter playerCharacter = new PlayerCharacter();
+//        CharAttributes charAttributes = new CharAttributes();
+//        charAttributesRepository.save(charAttributes);
         model.addAttribute("playerCharacter", playerCharacter);
         return "/character/new";
     }

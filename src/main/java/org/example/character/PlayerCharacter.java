@@ -24,7 +24,7 @@ public class PlayerCharacter {
     @OneToOne
     @JoinColumn(name = "charRaceId")
     private Race race;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "charAttributeId")
     private CharAttributes charAttributes;
     @OneToOne

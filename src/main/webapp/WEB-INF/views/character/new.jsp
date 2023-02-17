@@ -27,6 +27,8 @@
 <%--        <form:input path="pages"/>--%>
 <%--        <form:errors path="pages" cssClass="error"/>--%>
 <%--    </p>--%>
+
+
         <p>
             <form:label path="charName">Name</form:label>
             <form:input path="charName"/>
@@ -38,6 +40,57 @@
         <form:radiobutton path="gender" value = "F" label = "Female"/>
         <form:errors path="gender" cssClass="error"/>
     </p>
+
+<%--    Atrybutes--%>
+    <p>
+        <form:label path="${playerCharacter.charAttributes}">Character Attributes</form:label>
+    </p>
+    <p>
+        <label for="agility">Agility</label>
+        <form:input id = "agility" path="charAttributes.agilityValue"/>
+        <label for="agilityAffinity">Affinity</label>
+        <form:input id = "agilityAffinity" path="charAttributes.agilityAffinity"/>
+<%--        <form:errors path="charAttributes" cssClass="error"/>--%>
+    </p>
+    <p>
+<%--        <form:label path="${playerCharacter.charAttributes.phisiqueValue}">Phisique</form:label>--%>
+        <form:input path="charAttributes.phisiqueValue"/>
+        <form:label path="${playerCharacter.charAttributes.phisiqueAffinity}">Affinity</form:label>
+        <form:input path="charAttributes.phisiqueAffinity"/>
+        <form:errors path="charAttributes" cssClass="error"/>
+    </p>
+    <p>
+<%--        <form:label path="${playerCharacter.charAttributes.perceptionValue}">Perception</form:label>--%>
+        <form:input path="charAttributes.perceptionValue"/>
+        <form:label path="${playerCharacter.charAttributes.perceptionAffinity}">Affinity</form:label>
+        <form:input path="charAttributes.perceptionAffinity"/>
+        <form:errors path="charAttributes" cssClass="error"/>
+    </p>
+    <p>
+<%--        <form:label path="${playerCharacter.charAttributes.personalityValue}">Personality</form:label>--%>
+        <form:input path="charAttributes.personalityValue"/>
+        <form:label path="${playerCharacter.charAttributes.personalityAffinity}">Affinity</form:label>
+        <form:input path="charAttributes.personalityAffinity"/>
+        <form:errors path="charAttributes" cssClass="error"/>
+    </p>
+    <p>
+<%--        <form:label path="${playerCharacter.charAttributes.mentalityValue}">Mentality</form:label>--%>
+        <form:input path="charAttributes.mentalityValue"/>
+        <form:label path="${playerCharacter.charAttributes.mentalityAffinity}">Affinity</form:label>
+        <form:input path="charAttributes.mentalityAffinity"/>
+        <form:errors path="charAttributes" cssClass="error"/>
+    </p>
+    <p>
+<%--        <form:label path="${playerCharacter.charAttributes.luckValue}">Luck</form:label>--%>
+        <form:input path="charAttributes.luckValue"/>
+        <form:label path="${playerCharacter.charAttributes.luckAffinity}">Affinity</form:label>
+        <form:input path="charAttributes.luckAffinity"/>
+        <form:errors path="charAttributes" cssClass="error"/>
+    </p>
+
+
+
+
     <p>
         <form:label path="race">Race</form:label>
         <form:select itemValue="charRaceId" itemLabel="raceName" path="race" items="${races}" />
