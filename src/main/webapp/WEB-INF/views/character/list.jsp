@@ -8,6 +8,7 @@
 <table>
   <thead>
   <tr>
+
     <th>Id</th>
     <th>Name</th>
     <th>Gender</th>
@@ -15,6 +16,15 @@
     <th>Class</th>
     <th>Perk</th>
     <th>Description</th>
+
+    <th>Agility</th>
+    <th>Phisique</th>
+    <th>Perception</th>
+    <th>Personality</th>
+    <th>Mentality</th>
+    <th>Luck</th>
+
+
   </tr>
   </thead>
   <c:forEach items="${playerCharacters}" var="playerCharacter">
@@ -26,6 +36,14 @@
       <td><c:out value="${playerCharacter.charClass.className}"/></td>
       <td><c:out value="${playerCharacter.perks.perkName}"/></td>
       <td><c:out value="${playerCharacter.charDescription}"/></td>
+
+      <td><c:out value="${playerCharacter.charAttributes.agilityValue}"/></td>
+      <td><c:out value="${playerCharacter.charAttributes.phisiqueValue}"/></td>
+      <td><c:out value="${playerCharacter.charAttributes.perceptionValue}"/></td>
+      <td><c:out value="${playerCharacter.charAttributes.personalityValue}"/></td>
+      <td><c:out value="${playerCharacter.charAttributes.mentalityValue}"/></td>
+      <td><c:out value="${playerCharacter.charAttributes.luckValue}"/></td>
+
 <%--      <td>--%>
 <%--        <c:forEach items="${book.authors}" var="author">--%>
 <%--          <c:out value="${author.name}"/>--%>
@@ -33,12 +51,12 @@
 <%--      </td>--%>
 <%--      <td><c:out value="${book.category.name}"/></td>--%>
       <td>
-        <a href="/book/edit/${book.id}">Edit</a>
-        <a href="/book/delete/${book.id}">Delete</a>
+        <a href="/character/edit/${playerCharacter.charId}">Edit</a>
+        <a href="/character/delete/${playerCharacter.charId}">Delete</a>
       </td>
     </tr>
   </c:forEach>
 </table>
-<a href="/book/new">Add new book</a>
+<a href="/character/new">Create new character</a>
 </body>
 </html>

@@ -50,45 +50,37 @@
         <form:input id = "agility" path="charAttributes.agilityValue"/>
         <label for="agilityAffinity">Affinity</label>
         <form:input id = "agilityAffinity" path="charAttributes.agilityAffinity"/>
-<%--        <form:errors path="charAttributes" cssClass="error"/>--%>
     </p>
     <p>
-<%--        <form:label path="${playerCharacter.charAttributes.phisiqueValue}">Phisique</form:label>--%>
-        <form:input path="charAttributes.phisiqueValue"/>
-        <form:label path="${playerCharacter.charAttributes.phisiqueAffinity}">Affinity</form:label>
-        <form:input path="charAttributes.phisiqueAffinity"/>
-        <form:errors path="charAttributes" cssClass="error"/>
+        <label for="agility">Phisique</label>
+        <form:input id = "agility" path="charAttributes.phisiqueValue"/>
+        <label for="agilityAffinity">Affinity</label>
+        <form:input id = "agilityAffinity" path="charAttributes.phisiqueAffinity"/>
     </p>
     <p>
-<%--        <form:label path="${playerCharacter.charAttributes.perceptionValue}">Perception</form:label>--%>
-        <form:input path="charAttributes.perceptionValue"/>
-        <form:label path="${playerCharacter.charAttributes.perceptionAffinity}">Affinity</form:label>
-        <form:input path="charAttributes.perceptionAffinity"/>
-        <form:errors path="charAttributes" cssClass="error"/>
+        <label for="agility">Perception</label>
+        <form:input id = "agility" path="charAttributes.perceptionValue"/>
+        <label for="agilityAffinity">Affinity</label>
+        <form:input id = "agilityAffinity" path="charAttributes.perceptionAffinity"/>
     </p>
     <p>
-<%--        <form:label path="${playerCharacter.charAttributes.personalityValue}">Personality</form:label>--%>
-        <form:input path="charAttributes.personalityValue"/>
-        <form:label path="${playerCharacter.charAttributes.personalityAffinity}">Affinity</form:label>
-        <form:input path="charAttributes.personalityAffinity"/>
-        <form:errors path="charAttributes" cssClass="error"/>
+        <label for="agility">Personality</label>
+        <form:input id = "agility" path="charAttributes.personalityValue"/>
+        <label for="agilityAffinity">Affinity</label>
+        <form:input id = "agilityAffinity" path="charAttributes.personalityAffinity"/>
     </p>
     <p>
-<%--        <form:label path="${playerCharacter.charAttributes.mentalityValue}">Mentality</form:label>--%>
-        <form:input path="charAttributes.mentalityValue"/>
-        <form:label path="${playerCharacter.charAttributes.mentalityAffinity}">Affinity</form:label>
-        <form:input path="charAttributes.mentalityAffinity"/>
-        <form:errors path="charAttributes" cssClass="error"/>
+        <label for="agility">Mentality</label>
+        <form:input id = "agility" path="charAttributes.mentalityValue"/>
+        <label for="agilityAffinity">Affinity</label>
+        <form:input id = "agilityAffinity" path="charAttributes.mentalityAffinity"/>
     </p>
     <p>
-<%--        <form:label path="${playerCharacter.charAttributes.luckValue}">Luck</form:label>--%>
-        <form:input path="charAttributes.luckValue"/>
-        <form:label path="${playerCharacter.charAttributes.luckAffinity}">Affinity</form:label>
-        <form:input path="charAttributes.luckAffinity"/>
-        <form:errors path="charAttributes" cssClass="error"/>
+        <label for="agility">Luck</label>
+        <form:input id = "agility" path="charAttributes.luckValue"/>
+        <label for="agilityAffinity">Affinity</label>
+        <form:input id = "agilityAffinity" path="charAttributes.luckAffinity"/>
     </p>
-
-
 
 
     <p>

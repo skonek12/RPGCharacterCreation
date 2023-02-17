@@ -44,8 +44,6 @@ public class PlayerCharacterFormController {
     @GetMapping("/character/new")
     public String newBook(Model model) {
         PlayerCharacter playerCharacter = new PlayerCharacter();
-//        CharAttributes charAttributes = new CharAttributes();
-//        charAttributesRepository.save(charAttributes);
         model.addAttribute("playerCharacter", playerCharacter);
         return "/character/new";
     }
