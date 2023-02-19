@@ -5,7 +5,7 @@
 <head>
     <title>Create new character</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css" />
-    <script type = "text/javascript" src =""></script>
+    <script type = "text/javascript" src ="${pageContext.request.contextPath}/script.js"></script>
 </head>
 <body>
 <form:form method="post" action="/character/new" modelAttribute="playerCharacter">
@@ -63,11 +63,11 @@
     </p>
 
 
-    <p>
-        <form:label path="race">Race</form:label>
-        <form:select itemValue="charRaceId" itemLabel="raceName" path="race" items="${races}" />
-<%--        <form:errors path="race" cssClass="error"/>--%>
-    </p>
+<%--    <p>--%>
+<%--        <form:label path="race">Race</form:label>--%>
+<%--        <form:select itemValue="charRaceId" itemLabel="raceName" path="race" items="${races}" />--%>
+<%--&lt;%&ndash;        <form:errors path="race" cssClass="error"/>&ndash;%&gt;--%>
+<%--    </p>--%>
     <p>
         <form:label path="charClass">Class</form:label>
         <form:select itemValue="charClassId" itemLabel="className" path="charClass" items="${classes}" />
@@ -185,5 +185,9 @@
         <input type="submit" value="Add">
     </p>
 </form:form>
+<script>
+    var myvar = ${races};
+    console.log(myvar);
+</script>
 </body>
 </html>

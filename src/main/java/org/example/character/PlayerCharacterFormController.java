@@ -1,5 +1,6 @@
 package org.example.character;
 
+import com.google.gson.Gson;
 import org.example.charAttributes.CharAttributes;
 import org.example.charAttributes.CharAttributesRepository;
 import org.example.charClass.CharClass;
@@ -112,6 +113,12 @@ public class PlayerCharacterFormController {
         return "/character/delete";
     }
 
+//    @GetMapping("/character/delete/{id}")
+//    public String deleteCharacterForm(Model model, @PathVariable long id) {
+//        model.addAttribute("id", id);
+//        return "/character/delete";
+//    }
+
     @PostMapping("/character/delete/{id}")
     public String deleteCharacter(@PathVariable long id) {
         playerCharacterRepository.deleteById(id);
@@ -119,9 +126,17 @@ public class PlayerCharacterFormController {
     }
 
     @ModelAttribute("races")
-    public List<Race> races() {
-        return raceRepository.findAll();
+    public String races() {
+        Gson gson = new Gson();
+        List<Race> races =  raceRepository.findAll();
+        String json = gson.toJson(races);
+        return json;
     }
+//    @ModelAttribute("races")
+//    public List<Race> races2() {
+//        return raceRepository.findAll();
+//    }
+
 
     @ModelAttribute("classes")
     public List<CharClass> classes() {
