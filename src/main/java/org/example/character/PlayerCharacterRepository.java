@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlayerCharacterRepository extends JpaRepository<PlayerCharacter, Long> {
+
 }

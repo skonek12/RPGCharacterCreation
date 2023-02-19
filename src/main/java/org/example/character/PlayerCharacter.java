@@ -30,8 +30,8 @@ public class PlayerCharacter {
     @OneToOne
     @JoinColumn(name = "perkId")
     private Perks perks;
-    @OneToOne
-    @JoinColumn(name = "skillId")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "charSkillId")
     private CharSkills charskills;
     @ManyToOne
     @JoinColumn(name = "userId")

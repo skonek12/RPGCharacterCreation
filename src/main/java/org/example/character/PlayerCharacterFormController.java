@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,14 +44,21 @@ public class PlayerCharacterFormController {
     }
 
     @GetMapping("/character/new")
-    public String newBook(Model model) {
-        PlayerCharacter playerCharacter = new PlayerCharacter();
-        model.addAttribute("playerCharacter", playerCharacter);
+    public String newCharacter(Model model) {
+        List<Race> raceList = raceRepository.findAll();
+        model.addAttribute("raceList", raceList);
         return "/character/new";
     }
 
+//    @GetMapping("/character/new")
+//    public String getRaceList(Model model) {
+//        List<Race> raceList = new ArrayList<>();
+//        model.addAttribute("raceList", raceList);
+//        return "/character/new";
+//    }
+
     @PostMapping("/character/new")
-    public String saveBook(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
+    public String saveCharacter(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "/character/new";
         }
@@ -58,14 +67,14 @@ public class PlayerCharacterFormController {
     }
 
     @GetMapping("/character/list")
-    public String listBooks(Model model) {
+    public String listCharacters(Model model) {
         List<PlayerCharacter> playerCharacters = playerCharacterRepository.findAll();
         model.addAttribute("playerCharacters", playerCharacters);
         return "/character/list";
     }
 
     @GetMapping("/character/edit/{id}")
-    public String editBook(Model model, @PathVariable long id) {
+    public String editCharacter(Model model, @PathVariable long id) {
         Optional<PlayerCharacter> playerCharacter = playerCharacterRepository.findById(id);
         if (playerCharacter.isPresent()) {
             model.addAttribute("playerCharacter", playerCharacter);
@@ -76,22 +85,41 @@ public class PlayerCharacterFormController {
     }
 
     @PostMapping("/character/edit")
-    public String updateBook(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
+    public String updateCharacter(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "/character/edit";
         }
         playerCharacterRepository.save(playerCharacter);
         return "redirect:/character/list";
     }
+//    @GetMapping("/character/edit/{id}")
+//    public String editBook(Model model, @PathVariable long id) {
+//        Optional<PlayerCharacter> playerCharacter = playerCharacterRepository.findById(id);
+//        if (playerCharacter.isPresent()) {
+//            model.addAttribute("playerCharacter", playerCharacter);
+//            return "/character/edit";
+//        } else {
+//            return "redirect:/character/list";
+//        }
+//    }
+//
+//    @PostMapping("/character/edit")
+//    public String updateBook(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
+//        if (bindingResult.hasErrors()) {
+//            return "/character/edit";
+//        }
+//        playerCharacterRepository.save(playerCharacter);
+//        return "redirect:/character/list";
+//    }
 
     @GetMapping("/character/delete/{id}")
-    public String deleteBookForm(Model model, @PathVariable long id) {
+    public String deleteCharacterForm(Model model, @PathVariable long id) {
         model.addAttribute("id", id);
         return "/character/delete";
     }
 
     @PostMapping("/character/delete/{id}")
-    public String deleteBook(@PathVariable long id) {
+    public String deleteCharacter(@PathVariable long id) {
         playerCharacterRepository.deleteById(id);
         return "redirect:/character/list";
     }
