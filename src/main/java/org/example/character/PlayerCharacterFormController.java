@@ -45,17 +45,11 @@ public class PlayerCharacterFormController {
 
     @GetMapping("/character/new")
     public String newCharacter(Model model) {
-        List<Race> raceList = raceRepository.findAll();
-        model.addAttribute("raceList", raceList);
+        PlayerCharacter playerCharacter = new PlayerCharacter();
+        model.addAttribute("playerCharacter", playerCharacter);
         return "/character/new";
     }
 
-//    @GetMapping("/character/new")
-//    public String getRaceList(Model model) {
-//        List<Race> raceList = new ArrayList<>();
-//        model.addAttribute("raceList", raceList);
-//        return "/character/new";
-//    }
 
     @PostMapping("/character/new")
     public String saveCharacter(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {

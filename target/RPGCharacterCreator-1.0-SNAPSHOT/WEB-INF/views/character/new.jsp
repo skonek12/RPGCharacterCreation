@@ -5,6 +5,7 @@
 <head>
     <title>Create new character</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css" />
+    <script type = "text/javascript" src =""></script>
 </head>
 <body>
 <form:form method="post" action="/character/new" modelAttribute="playerCharacter">
@@ -65,7 +66,7 @@
     <p>
         <form:label path="race">Race</form:label>
         <form:select itemValue="charRaceId" itemLabel="raceName" path="race" items="${races}" />
-        <form:errors path="race" cssClass="error"/>
+<%--        <form:errors path="race" cssClass="error"/>--%>
     </p>
     <p>
         <form:label path="charClass">Class</form:label>
@@ -92,6 +93,9 @@
     <p>
         <label for="acrobatics">Acrobatics</label>
         <form:input id = "acrobatics" path="charskills.acrobatics" value="4" disabled="true"/>
+
+        <form:input id = "acrobatics" path="race.acrobatics" value="" disabled="true"/>
+
     </p>
     <p>
         <label for="arcaneMagic">Arcane Magic</label>
