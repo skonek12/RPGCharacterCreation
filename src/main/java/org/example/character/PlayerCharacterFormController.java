@@ -85,27 +85,10 @@ public class PlayerCharacterFormController {
             return "/character/edit";
         }
         playerCharacterRepository.save(playerCharacter);
+        playerCharacterRepository.save(playerCharacter);
         return "redirect:/character/list";
     }
-//    @GetMapping("/character/edit/{id}")
-//    public String editBook(Model model, @PathVariable long id) {
-//        Optional<PlayerCharacter> playerCharacter = playerCharacterRepository.findById(id);
-//        if (playerCharacter.isPresent()) {
-//            model.addAttribute("playerCharacter", playerCharacter);
-//            return "/character/edit";
-//        } else {
-//            return "redirect:/character/list";
-//        }
-//    }
-//
-//    @PostMapping("/character/edit")
-//    public String updateBook(@Valid PlayerCharacter playerCharacter, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors()) {
-//            return "/character/edit";
-//        }
-//        playerCharacterRepository.save(playerCharacter);
-//        return "redirect:/character/list";
-//    }
+
 
     @GetMapping("/character/delete/{id}")
     public String deleteCharacterForm(Model model, @PathVariable long id) {
@@ -113,11 +96,6 @@ public class PlayerCharacterFormController {
         return "/character/delete";
     }
 
-//    @GetMapping("/character/delete/{id}")
-//    public String deleteCharacterForm(Model model, @PathVariable long id) {
-//        model.addAttribute("id", id);
-//        return "/character/delete";
-//    }
 
     @PostMapping("/character/delete/{id}")
     public String deleteCharacter(@PathVariable long id) {
@@ -125,17 +103,17 @@ public class PlayerCharacterFormController {
         return "redirect:/character/list";
     }
 
-    @ModelAttribute("races")
-    public String races() {
+    @ModelAttribute("racesJson")
+    public String racesJson() {
         Gson gson = new Gson();
         List<Race> races =  raceRepository.findAll();
         String json = gson.toJson(races);
         return json;
     }
-//    @ModelAttribute("races")
-//    public List<Race> races2() {
-//        return raceRepository.findAll();
-//    }
+    @ModelAttribute("races")
+    public List<Race> races() {
+        return raceRepository.findAll();
+    }
 
 
     @ModelAttribute("classes")
