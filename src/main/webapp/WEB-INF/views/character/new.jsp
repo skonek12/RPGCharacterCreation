@@ -70,7 +70,7 @@
     </p>
     <p>
         <form:label path="charClass">Class</form:label>
-        <form:select itemValue="charClassId" itemLabel="className" path="charClass" items="${classes}" />
+        <form:select id = "charClassChoice" itemValue="charClassId" itemLabel="className" path="charClass" items="${classes}" />
         <form:errors path="charClass" cssClass="error"/>
     </p>
     <p>
@@ -210,7 +210,7 @@
 <script>
      var racesJsonFile = ${racesJson};
      var classesJsonFile = ${classJson};
-
+     var perksJsonFile = ${perksJson};
 </script>
 </body>
 </html>

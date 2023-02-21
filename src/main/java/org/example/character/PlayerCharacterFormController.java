@@ -117,6 +117,13 @@ public class PlayerCharacterFormController {
         String json = gson.toJson(classes);
         return json;
     }
+    @ModelAttribute("perksJson")
+    public String perksJson() {
+        Gson gson = new Gson();
+        List<Perks> perks =  perksRepository.findAll();
+        String json = gson.toJson(perks);
+        return json;
+    }
     @ModelAttribute("races")
     public List<Race> races() {
         return raceRepository.findAll();
