@@ -8,9 +8,12 @@
 <body>
 <form:form method="post" action="/character/edit" modelAttribute="playerCharacter">
     <p>
-        <form:label path="playerCharacter">Name</form:label>
-        <form:input path="playerCharacter.charName" value ="${charName}" />
-        <form:errors path="charName" cssClass="error"/>
+
+<%--        <form:input path="charName" value ="${charName}" />--%>
+<%--        <form:errors path="charName" cssClass="error"/>--%>
+    <form:label path="charName">Name</form:label>
+    <form:input path="charName"/>
+    <form:errors path="charName" cssClass="error"/>
     </p>
 <p>
         <a href="/character/list">Cancel</a>

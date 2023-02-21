@@ -110,6 +110,13 @@ public class PlayerCharacterFormController {
         String json = gson.toJson(races);
         return json;
     }
+    @ModelAttribute("classJson")
+    public String classJson() {
+        Gson gson = new Gson();
+        List<CharClass> classes =  charClassRepository.findAll();
+        String json = gson.toJson(classes);
+        return json;
+    }
     @ModelAttribute("races")
     public List<Race> races() {
         return raceRepository.findAll();

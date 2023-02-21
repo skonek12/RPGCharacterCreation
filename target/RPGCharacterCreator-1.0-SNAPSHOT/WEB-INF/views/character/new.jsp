@@ -91,88 +91,110 @@
         <form:label path="${playerCharacter.charskills}">Character Skills</form:label>
     </p>
     <p>
-        <label for="acrobatics">Acrobatics</label>
-        <form:input id = "acrobatics" path="charskills.acrobatics" value="4" disabled="true"/>
+        <table>
+    <tr>
+        <th>Skill</th>
+        <th>Base Value</th>
+        <th>Race Bonus</th>
+        <th>Class Bonus</th>
+        <th>Perk Bonus</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>        <label for="acrobatics">Acrobatics</label></td>
+        <td>        <input id = "acrobaticsBaseValue" value="4" disabled="true"/></td>
+        <td>        <input id = "acrobaticsRaceBonus" value="0" disabled="true"/></td>
+        <td>        <input id = "acrobaticsClassBonus" value="0" disabled="true"/></td>
+        <td>        <input id = "acrobaticsPerkBonus" value="0" disabled="true"/></td>
+        <td>        <form:input id = "acrobatics" path="charskills.acrobatics" value="7" disabled="true"/></td>
+    </tr>
+    <tr>
+        <td>        <label for="arcaneMagic">Arcane Magic</label></td>
+        <td>        <input type = "number" id = "arcaneMagicBaseValue" value="4" disabled="true"/></td>
+        <td>        <input type = "number" id = "arcaneMagicRaceBonus" value="0" disabled="true"/></td>
+        <td>        <input type = "number" id = "arcaneMagicClassBonus" value="0" disabled="true"/></td>
+        <td>        <input type = "number" id = "arcaneMagicPerkBonus" value="0" disabled="true"/></td>
+        <td>        <form:input id = "arcaneMagic" path="charskills.arcaneMagic" value="8" disabled="true"/></td>
+    </tr>
 
-        <form:input id = "acrobatics" path="race.acrobatics" value="" disabled="true"/>
-
+</table>
     </p>
-    <p>
-        <label for="arcaneMagic">Arcane Magic</label>
-        <form:input id = "arcaneMagic" path="charskills.arcaneMagic" value="4"/>
-    </p>
-    <p>
-    <label for="block">Block</label>
-    <form:input id = "block" path="charskills.block" value="4"/>
-    </p>
-    <p>
-    <label for="bow">Bow</label>
-    <form:input id = "bow" path="charskills.bow" value="4"/>
-    </p>
-    <p>
-    <label for="crossbow">Crossbow</label>
-    <form:input id = "crossbow" path="charskills.crossbow" value="4"/>
-    </p>
-    <p>
-    <label for="divineMagic">DivineMagic</label>
-    <form:input id = "divineMagic" path="charskills.divineMagic" value="4"/>
-    </p>
-    <p>
-    <label for="dodge">Dodge</label>
-    <form:input id = "dodge" path="charskills.dodge" value="4"/>
-    </p>
-    <p>
-    <label for="handToHand">Hand To Hand</label>
-    <form:input id = "handToHand" path="charskills.handToHand" value="4"/>
-    </p>
-    <p>
-    <label for="intimidation">Intimidation</label>
-    <form:input id = "intimidation" path="charskills.intimidation" value="4"/>
-    </p>
-    <p>
-        <label for="mercantile">Mercantile</label>
-        <form:input id = "mercantile" path="charskills.mercantile" value="4"/>
-    </p>
-    <p>
-        <label for="occultMagic">Intimidation</label>
-        <form:input id = "occultMagic" path="charskills.occultMagic" value="4"/>
-    </p>
-    <p>
-        <label for="oneHanded">One handed weapons</label>
-        <form:input id = "oneHanded" path="charskills.oneHanded" value="4"/>
-    </p>
-    <p>
-        <label for="persuasion">Persuasion</label>
-        <form:input id = "persuasion" path="charskills.persuasion" value="4"/>
-    </p>
-    <p>
-        <label for="primordialMagic">Primordial Magic</label>
-        <form:input id = "primordialMagic" path="charskills.primordialMagic" value="4"/>
-    </p>
-    <p>
-        <label for="shield">Shield</label>
-        <form:input id = "shield" path="charskills.shield" value="4"/>
-    </p>
-    <p>
-        <label for="sling">Sling/label>
-        <form:input id = "sling" path="charskills.sling" value="4"/>
-    </p>
-    <p>
-        <label for="stealing">stealing</label>
-        <form:input id = "stealing" path="charskills.stealing" value="4"/>
-    </p>
-    <p>
-        <label for="throw">Throw</label>
-        <form:input id = "throw" path="charskills.throwThings" value="4"/>
-    </p>
-    <p>
-        <label for="traps">Traps</label>
-        <form:input id = "traps" path="charskills.traps" value="4"/>
-    </p>
-    <p>
-        <label for="twoHanded">Two handed weapon</label>
-        <form:input id = "twoHanded" path="charskills.twoHanded" value="4"/>
-    </p>
+<%--    <p>--%>
+<%--        <label for="arcaneMagic">Arcane Magic</label>--%>
+<%--        <form:input id = "arcaneMagic" path="charskills.arcaneMagic" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="block">Block</label>--%>
+<%--    <form:input id = "block" path="charskills.block" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="bow">Bow</label>--%>
+<%--    <form:input id = "bow" path="charskills.bow" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="crossbow">Crossbow</label>--%>
+<%--    <form:input id = "crossbow" path="charskills.crossbow" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="divineMagic">DivineMagic</label>--%>
+<%--    <form:input id = "divineMagic" path="charskills.divineMagic" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="dodge">Dodge</label>--%>
+<%--    <form:input id = "dodge" path="charskills.dodge" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="handToHand">Hand To Hand</label>--%>
+<%--    <form:input id = "handToHand" path="charskills.handToHand" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--    <label for="intimidation">Intimidation</label>--%>
+<%--    <form:input id = "intimidation" path="charskills.intimidation" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="mercantile">Mercantile</label>--%>
+<%--        <form:input id = "mercantile" path="charskills.mercantile" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="occultMagic">Intimidation</label>--%>
+<%--        <form:input id = "occultMagic" path="charskills.occultMagic" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="oneHanded">One handed weapons</label>--%>
+<%--        <form:input id = "oneHanded" path="charskills.oneHanded" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="persuasion">Persuasion</label>--%>
+<%--        <form:input id = "persuasion" path="charskills.persuasion" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="primordialMagic">Primordial Magic</label>--%>
+<%--        <form:input id = "primordialMagic" path="charskills.primordialMagic" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="shield">Shield</label>--%>
+<%--        <form:input id = "shield" path="charskills.shield" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="sling">Sling/label>--%>
+<%--        <form:input id = "sling" path="charskills.sling" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="stealing">stealing</label>--%>
+<%--        <form:input id = "stealing" path="charskills.stealing" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="throw">Throw</label>--%>
+<%--        <form:input id = "throw" path="charskills.throwThings" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="traps">Traps</label>--%>
+<%--        <form:input id = "traps" path="charskills.traps" value="4"/>--%>
+<%--    </p>--%>
+<%--    <p>--%>
+<%--        <label for="twoHanded">Two handed weapon</label>--%>
+<%--        <form:input id = "twoHanded" path="charskills.twoHanded" value="4"/>--%>
+<%--    </p>--%>
 
 
 
@@ -186,7 +208,9 @@
     </p>
 </form:form>
 <script>
-     var myvar = ${racesJson};
+     var racesJsonFile = ${racesJson};
+     var classesJsonFile = ${classJson};
+
 </script>
 </body>
 </html>
