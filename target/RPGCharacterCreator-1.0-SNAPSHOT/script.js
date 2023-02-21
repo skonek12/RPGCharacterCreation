@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const acrobaticsPerkBonus = document.getElementById("acrobaticsPerkBonus");
     const acrobaticsInputValue = document.getElementById("acrobatics");
 
-    // const charClassChoice = document.getElementById("charClassChoice");
+    const charClassChoice = document.getElementById("charClassChoice");
+    let charRaceChoice = document.getElementById("charRaceChoice");
     // console.log(charClassChoice.value);
 
     // acrobaticsRaceBonus.setAttribute("value", racesJsonFile[2].acrobatics)
@@ -59,30 +60,29 @@ document.addEventListener("DOMContentLoaded", function () {
     // }
     function setAllClassBonuses() {
         let charClassChoice = document.getElementById("charClassChoice");
-        // console.log("charClassChoice valuue: "+charClassChoice.value);
-        console.log("json valuue 1: "+classesJsonFile[0].charClassId)
-        console.log("json valuue 2: "+classesJsonFile[1].charClassId)
-        console.log("json valuue 3: "+classesJsonFile[2].charClassId)
-
-        console.log("charClassChoice valuue 1: "+charClassChoice[0].value)
-        console.log("charClassChoice valuue 2: "+charClassChoice[1].value)
-        console.log("charClassChoice valuue 3: "+charClassChoice[2].value)
-
         let allSkillClassBonuses = document.querySelectorAll(".classBonus");
         for (let j = 0; j < allSkillClassBonuses.length; j++) {
             let attributeName = allSkillClassBonuses[j].getAttribute("name");
-
             for (let i = 0; i < classesJsonFile.length; i++) {
                 if (parseInt(charClassChoice.value) === parseInt(classesJsonFile[i].charClassId)) {
                     allSkillClassBonuses[j].setAttribute("value", classesJsonFile[i][attributeName])
-                    // console.log("charClassChoice valuue: "+charClassChoice.value);
-                    // console.log("charClassChoice valuue: "+classesJsonFile[i].charClassId);
-                    // console.log("____");
                     break;
                 }
             }
         }
-
+    }
+    function setAllRaceBonuses() {
+        let charRaceChoice = document.getElementById("charRaceChoice");
+        let allSkillRaceBonuses = document.querySelectorAll(".raceBonus");
+        for (let j = 0; j < allSkillRaceBonuses.length; j++) {
+            let attributeName = allSkillRaceBonuses[j].getAttribute("name");
+            for (let i = 0; i < racesJsonFile.length; i++) {
+                if (parseInt(charRaceChoice.value) === parseInt(racesJsonFile[i].charRaceId)) {
+                    allSkillRaceBonuses[j].setAttribute("value", racesJsonFile[i][attributeName])
+                    break;
+                }
+            }
+        }
     }
     // function setAllClassBonuses() {
     //     for (var i = 1; i <= classesJsonFile.length; i++) {
@@ -115,7 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
         setEndValues()
     })
 
-
+    charRaceChoice.addEventListener("change",function (){
+        setAllRaceBonuses();
+        setEndValues();
+    })
 })
 
 
