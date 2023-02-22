@@ -75,7 +75,7 @@
     </p>
     <p>
         <form:label path="perks">Perk</form:label>
-        <form:select itemValue="perkId" itemLabel="perkName" path="perks" items="${perks}"/>
+        <form:select id = "charPerkChoice" itemValue="perkId" itemLabel="perkName" path="perks" items="${perks}"/>
         <form:errors path="perks" cssClass="error"/>
     </p>
         <p>
@@ -102,27 +102,27 @@
     </tr>
     <tr>
         <td>        <label for="acrobatics">Acrobatics</label></td>
-        <td>        <input class = "baseValue" name = "acrobatics"  id = "acrobaticsBaseValue" value="4" disabled="true"/></td>
-        <td>        <input class = "raceBonus" name = "acrobatics"  id = "acrobaticsRaceBonus" value="0" disabled="true"/></td>
-        <td>        <input class = "classBonus"name = "acrobatics"  id = "acrobaticsClassBonus" value="0" disabled="true"/></td>
-        <td>        <input class = "perkBonus" name = "acrobatics"  id = "acrobaticsPerkBonus" value="0" disabled="true"/></td>
-        <td>        <form:input class = "endValue" id = "acrobatics" path="charskills.acrobatics" value="" disabled="false" readonly="true"/></td>
+        <td>        <input class = "baseValue acrobatics" name = "acrobatics"  id = "acrobaticsBaseValue" value="4" disabled="true"/></td>
+        <td>        <input class = "raceBonus acrobatics" name = "acrobatics"  id = "acrobaticsRaceBonus" value="0" disabled="true"/></td>
+        <td>        <input class = "classBonus acrobatics"name = "acrobatics"  id = "acrobaticsClassBonus" value="0" disabled="true"/></td>
+        <td>        <input class = "perkBonus acrobatics" name = "acrobatics"  id = "acrobaticsPerkBonus" value="0" disabled="true"/></td>
+        <td>        <form:input class = "endValue acrobatics" id = "acrobatics" path="charskills.acrobatics" value="" disabled="false" readonly="true"/></td>
     </tr>
     <tr>
         <td>        <label for="arcaneMagic">Arcane Magic</label></td>
-        <td>        <input class = "baseValue" name = "arcaneMagic" id = "arcaneMagicBaseValue" value="4" disabled="true"/></td>
-        <td>        <input class = "raceBonus" name = "arcaneMagic" id = "arcaneMagicRaceBonus" value="0" disabled="true"/></td>
-        <td>        <input class = "classBonus" name = "arcaneMagic" id = "arcaneMagicClassBonus" value="0" disabled="true"/></td>
-        <td>        <input class = "perkBonus" name = "arcaneMagic" id = "arcaneMagicPerkBonus" value="0" disabled="true"/></td>
-        <td>        <form:input class = "endValue" id = "arcaneMagic" path="charskills.arcaneMagic" value="" disabled="false" readonly="true"/></td>
+        <td>        <input class = "baseValue arcaneMagic" name = "arcaneMagic" id = "arcaneMagicBaseValue" value="4" disabled="true"/></td>
+        <td>        <input class = "raceBonus arcaneMagic" name = "arcaneMagic" id = "arcaneMagicRaceBonus" value="0" disabled="true"/></td>
+        <td>        <input class = "classBonus arcaneMagic" name = "arcaneMagic" id = "arcaneMagicClassBonus" value="0" disabled="true"/></td>
+        <td>        <input class = "perkBonus arcaneMagic" name = "arcaneMagic" id = "arcaneMagicPerkBonus" value="0" disabled="true"/></td>
+        <td>        <form:input class = "endValue arcaneMagic" id = "arcaneMagic" path="charskills.arcaneMagic" value="" disabled="false" readonly="true"/></td>
     </tr>
     <tr>
         <td>        <label for="block">Block</label></td>
-        <td>        <input class = "baseValue" name = "block" id = "blockBaseValue" value="4" disabled="true"/></td>
-        <td>        <input class = "raceBonus" name = "block" id = "blockRaceBonus" value="0" disabled="true"/></td>
-        <td>        <input class = "classBonus" name = "block" id = "blockClassBonus" value="0" disabled="true"/></td>
-        <td>        <input class = "perkBonus" name = "block" id = "blockPerkBonus" value="0" disabled="true"/></td>
-        <td>        <form:input class = "endValue" id = "block" path="charskills.block" value="" disabled="false" readonly="true"/></td>
+        <td>        <input class = "baseValue block" name = "block" id = "blockBaseValue" value="4" disabled="true"/></td>
+        <td>        <input class = "raceBonus block" name = "block" id = "blockRaceBonus" value="0" disabled="true"/></td>
+        <td>        <input class = "classBonus block" name = "block" id = "blockClassBonus" value="0" disabled="true"/></td>
+        <td>        <input class = "perkBonus block" name = "block" id = "blockPerkBonus" value="0" disabled="true"/></td>
+        <td>        <form:input class = "endValue block" id = "block" path="charskills.block" value="" disabled="false" readonly="true"/></td>
     </tr>
 
 </table>
