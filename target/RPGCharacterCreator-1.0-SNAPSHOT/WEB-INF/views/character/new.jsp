@@ -9,27 +9,42 @@
 </head>
 <body>
 <form:form method="post" action="/character/new" modelAttribute="playerCharacter">
-        <p>
-            <form:label path="charName">Name</form:label>
-            <form:input path="charName"/>
-            <form:errors path="charName" cssClass="error"/>
-        </p>
+<table>
+    <tr>
+        <th>Character Name</th>
+        <th>Gender</th>
+    </tr>
+    <tr>
+        <td><form:input path="charName"/></td>
+<%--        <td><form:errors path="charName" cssClass="error"/></td>--%>
+        <td>
+            <form:radiobutton path="gender" value = "M" label = "Male"/>
+            <form:radiobutton path="gender" value = "F" label = "Female"/>
+        </td>
+    </tr>
+    <tr>
+        <td><form:errors path="charName" cssClass="error"/></td>
+        <td><form:errors path="gender" cssClass="error"/></td>
+    </tr>
+</table>
+
     <p>
-        <form:label path="gender">Gender</form:label>
-        <form:radiobutton path="gender" value = "M" label = "Male"/>
-        <form:radiobutton path="gender" value = "F" label = "Female"/>
+
+
         <form:errors path="gender" cssClass="error"/>
     </p>
 
 <%--    Atrybutes--%>
     <p>
-        <form:label path="${playerCharacter.charAttributes}">Character Attributes</form:label>
+<%--        <form:label path="${playerCharacter.charAttributes}">Character Attributes</form:label>--%>
     </p>
     <p>
         <label for="agility">Agility</label>
         <form:input id = "agility" path="charAttributes.agilityValue"/>
+        <form:errors path="charAttributes.agilityValue" cssClass="error"/>
         <label for="agilityAffinity">Affinity</label>
         <form:input id = "agilityAffinity" path="charAttributes.agilityAffinity"/>
+
     </p>
     <p>
         <label for="agility">Phisique</label>

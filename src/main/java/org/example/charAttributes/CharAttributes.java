@@ -1,6 +1,8 @@
 package org.example.charAttributes;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
 @Table(name="charAttributes")
@@ -8,16 +10,29 @@ public class CharAttributes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long charAttributeId;
+//    @Min(value = 1)
+//    @Max(value = 6)
     private int agilityValue;
     private String agilityAffinity;
+//    @Min(value = 1, message = "Min: 1 Max: 6")
+//    @Max(value = 6, message = "Min: 1 Max: 6")
     private int phisiqueValue;
     private String phisiqueAffinity;
+//    @Min(value = 1, message = "Min: 1 Max: 6")
+//    @Max(value = 6, message = "Min: 1 Max: 6")
     private int perceptionValue;
     private String perceptionAffinity;
+//    @Min(value = 1, message = "Min: 1 Max: 6")
+//    @Max(value = 6, message = "Min: 1 Max: 6")
     private int personalityValue;
+
     private String personalityAffinity;
+//    @Min(value = 1, message = "Min: 1 Max: 6")
+//    @Max(value = 6, message = "Min: 1 Max: 6")
     private int mentalityValue;
     private String mentalityAffinity;
+//    @Min(value = 1, message = "Min: 1 Max: 6")
+//    @Max(value = 6, message = "Min: 1 Max: 6")
     private int luckValue;
     private String luckAffinity;
 

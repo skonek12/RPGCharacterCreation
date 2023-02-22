@@ -11,18 +11,18 @@ import org.example.perks.PerksRepository;
 import org.example.race.RaceRepository;
 import org.example.race.Race;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +35,7 @@ public class PlayerCharacterFormController {
     private final RaceRepository raceRepository;
     private final CharClassRepository charClassRepository;
 
+
     public PlayerCharacterFormController(PlayerCharacterRepository playerCharacterRepository, CharAttributesRepository charAttributesRepository, CharSkillsRepository charSkillsRepository, PerksRepository perksRepository, RaceRepository raceRepository, CharClassRepository charClassRepository) {
         this.playerCharacterRepository = playerCharacterRepository;
         this.charAttributesRepository = charAttributesRepository;
@@ -42,6 +43,10 @@ public class PlayerCharacterFormController {
         this.perksRepository = perksRepository;
         this.raceRepository = raceRepository;
         this.charClassRepository = charClassRepository;
+    }
+    @Bean
+    public Validator validator() {
+        return new LocalValidatorFactoryBean();
     }
 
     @GetMapping("/character/new")
@@ -139,4 +144,6 @@ public class PlayerCharacterFormController {
     public List<Perks> perks() {
         return perksRepository.findAll();
     }
+
+
 }
