@@ -8,7 +8,7 @@
 </head>
 <body>
 <form:form method="post" action="/character/edit" modelAttribute="playerCharacter">
-
+    <form:hidden path="charId"/>
     <table>
         <tr>
             <td>
@@ -16,7 +16,7 @@
             </td>
             <td></td>
             <td>
-                <input type="submit" value="Create">
+                <input type="submit" value="UPDATE">
             </td>
         </tr>
     </table>

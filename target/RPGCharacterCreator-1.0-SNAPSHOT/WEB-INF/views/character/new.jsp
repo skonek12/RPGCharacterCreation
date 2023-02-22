@@ -16,7 +16,7 @@
             </td>
             <td></td>
             <td>
-                <input type="submit" value="Create">
+                <input type="submit" value="CREATE">
             </td>
         </tr>
     </table>

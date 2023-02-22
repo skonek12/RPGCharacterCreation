@@ -8,7 +8,7 @@
 </head>
 <body>
 <form:form method="post" action="/character/edit" modelAttribute="playerCharacter">
-
+    <form:hidden path="charId"/>
     <table>
         <tr>
             <td>

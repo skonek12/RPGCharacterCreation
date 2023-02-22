@@ -90,7 +90,6 @@ public class PlayerCharacterFormController {
             return "/character/edit";
         }
         playerCharacterRepository.save(playerCharacter);
-        playerCharacterRepository.save(playerCharacter);
         return "redirect:/character/list";
     }
 
