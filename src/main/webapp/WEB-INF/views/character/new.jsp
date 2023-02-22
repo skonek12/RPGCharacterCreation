@@ -50,7 +50,7 @@
                 <label for="agility">Agility</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.agilityValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.agilityValue" value="1"/>
                 <form:errors path="charAttributes.agilityValue" cssClass="error"/>
             </td>
             <td>
@@ -63,7 +63,7 @@
                 <label for="agility">Phisique</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.phisiqueValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.phisiqueValue" value="1"/>
                 <form:errors path="charAttributes.phisiqueValue" cssClass="error"/>
             </td>
             <td>
@@ -76,7 +76,7 @@
                 <label for="agility">Perception</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.perceptionValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.perceptionValue" value="1"/>
                 <form:errors path="charAttributes.perceptionValue" cssClass="error"/>
             </td>
             <td>
@@ -89,11 +89,11 @@
                 <label for="agility">Personality</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.personalityValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.personalityValue" value="1"/>
                 <form:errors path="charAttributes.personalityValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.personalityAffinity"/>
+                <form:input  id="agilityAffinity" path="charAttributes.personalityAffinity"/>
             </td>
         </tr>
 
@@ -102,7 +102,7 @@
                 <label for="agility">Mentality</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.mentalityValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.mentalityValue" value="1"/>
                 <form:errors path="charAttributes.mentalityValue" cssClass="error"/>
             </td>
             <td>
@@ -115,11 +115,16 @@
                 <label for="agility">Luck</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.luckValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.luckValue" value="1"/>
                 <form:errors path="charAttributes.luckValue" cssClass="error"/>
             </td>
             <td>
                 <form:input id="agilityAffinity" path="charAttributes.luckAffinity"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type = "button" id="rerollButton" onclick="return false">REROLL ATTRIBUTES</button>
             </td>
         </tr>
     </table>

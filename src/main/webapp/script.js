@@ -1,8 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // const charClassChoice = document.getElementById("charClassChoice");
-    // let charRaceChoice = document.getElementById("charRaceChoice");
-    // let charPerkChoice = document.getElementById("charPerkChoice");
+    let charClassChoice = document.getElementById("charClassChoice");
+    let charRaceChoice = document.getElementById("charRaceChoice");
+    let charPerkChoice = document.getElementById("charPerkChoice");
+    let randomButton = document.getElementById("rerollButton")
+    let allAttributes = document.getElementsByClassName("charAttribute");
+    console.log(allAttributes);
+    console.log(randomButton);
+
+function getRandomInt(min,max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
+
+randomButton.addEventListener("click", function(){
+    let allAttributes = document.getElementsByClassName("charAttribute");
+    for (let i = 0; i < allAttributes.length; i++) {
+        allAttributes[i].setAttribute("value",getRandomInt(1,6))
+    }
+})
+
+
 
 
     function setAllClassBonuses() {

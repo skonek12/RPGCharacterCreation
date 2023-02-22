@@ -44,10 +44,6 @@ public class PlayerCharacterFormController {
         this.raceRepository = raceRepository;
         this.charClassRepository = charClassRepository;
     }
-    @Bean
-    public Validator validator() {
-        return new LocalValidatorFactoryBean();
-    }
 
     @GetMapping("/character/new")
     public String newCharacter(Model model) {
