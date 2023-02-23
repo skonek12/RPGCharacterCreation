@@ -50,11 +50,11 @@
                 <label for="agility">Agility</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.agilityValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.agilityValue"  readonly="true"/>
                 <form:errors path="charAttributes.agilityValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.agilityAffinity"/>
+                <form:input class="atrAffinity" id="agilityAffinity" path="charAttributes.agilityAffinity" readonly="true"/>
             </td>
         </tr>
 
@@ -63,11 +63,11 @@
                 <label for="agility">Phisique</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.phisiqueValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.phisiqueValue"  readonly="true"/>
                 <form:errors path="charAttributes.phisiqueValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.phisiqueAffinity"/>
+                <form:input class="atrAffinity" id="agilityAffinity" path="charAttributes.phisiqueAffinity" readonly="true"/>
             </td>
         </tr>
 
@@ -76,11 +76,11 @@
                 <label for="agility">Perception</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.perceptionValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.perceptionValue"  readonly="true"/>
                 <form:errors path="charAttributes.perceptionValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.perceptionAffinity"/>
+                <form:input class="atrAffinity" id="agilityAffinity" path="charAttributes.perceptionAffinity" readonly="true"/>
             </td>
         </tr>
 
@@ -89,11 +89,11 @@
                 <label for="agility">Personality</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.personalityValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.personalityValue"  readonly="true"/>
                 <form:errors path="charAttributes.personalityValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.personalityAffinity"/>
+                <form:input class="atrAffinity" id="agilityAffinity" path="charAttributes.personalityAffinity" readonly="true"/>
             </td>
         </tr>
 
@@ -102,11 +102,11 @@
                 <label for="agility">Mentality</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.mentalityValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.mentalityValue"  readonly="true"/>
                 <form:errors path="charAttributes.mentalityValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.mentalityAffinity"/>
+                <form:input class="atrAffinity" id="agilityAffinity" path="charAttributes.mentalityAffinity" readonly="true"/>
             </td>
         </tr>
 
@@ -115,11 +115,16 @@
                 <label for="agility">Luck</label>
             </td>
             <td>
-                <form:input id="agility" path="charAttributes.luckValue"/>
+                <form:input class = "charAttribute" id="agility" path="charAttributes.luckValue" readonly="true"/>
                 <form:errors path="charAttributes.luckValue" cssClass="error"/>
             </td>
             <td>
-                <form:input id="agilityAffinity" path="charAttributes.luckAffinity"/>
+                <form:input class="atrAffinity" id="agilityAffinity" path="charAttributes.luckAffinity" readonly="true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type = "button" id="rerollButton" onclick="return false">REROLL ATTRIBUTES</button>
             </td>
         </tr>
     </table>

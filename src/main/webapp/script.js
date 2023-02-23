@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(allAttributes);
     console.log(randomButton);
 
+    let allAtrAffinities = document.getElementsByClassName("atrAffinity");
+    console.log(allAtrAffinities);
+
 function getRandomInt(min,max){
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -16,9 +19,21 @@ function getRandomInt(min,max){
 
 randomButton.addEventListener("click", function(){
     let allAttributes = document.getElementsByClassName("charAttribute");
+    let allAtrAffinities = document.getElementsByClassName("atrAffinity");
     for (let i = 0; i < allAttributes.length; i++) {
-        allAttributes[i].setAttribute("value",getRandomInt(1,6))
+        let randomInt = getRandomInt(1,6);
+        allAttributes[i].setAttribute("value",randomInt)
+        let affinityString;
+        if(randomInt<=2){
+            affinityString = "bad"
+        } else if (randomInt>=5) {
+            affinityString = "great"
+        } else {
+            affinityString = "average"
+        }
+        allAtrAffinities[i].setAttribute("value",affinityString)
     }
+
 })
 
 

@@ -19,7 +19,7 @@
 
     <th>Agi</th>
     <th>Phi</th>
-    <th>Perc/th>
+    <th>Perc</th>
     <th>Pers</th>
     <th>Men</th>
     <th>Lu</th>
